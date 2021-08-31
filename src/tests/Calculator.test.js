@@ -72,6 +72,16 @@ describe('Calculator', () => {
     expect(runningTotal.text()).toEqual('3'); 
   })
 
+  it('should concatenate 1, 4, 5 to get 145', () => {
+    const button1 = container.find('#number1');
+    const button4 = container.find('#number4');
+    const button5 = container.find('#number5');
+    button1.simulate('click');
+    button4.simulate('click');
+    button5.simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('145'); 
+  })
 })
 
 // calculator.multiply() - multiply 3 by 5 and get 15
