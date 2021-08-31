@@ -105,7 +105,7 @@ describe('Calculator', () => {
   it('should clear running total while affecting total and restarting to 0', () =>{
   const button1 = container.find('#number1');
   const button4 = container.find('#number4');
-  const button5 = container.find('#number5');
+  const button6 = container.find('#number6');
   const buttonAdd = container.find('#operator_add');
   const buttonClear = container.find('#clear');
   const buttonEqual = container.find('#operator-equals');
@@ -114,12 +114,10 @@ describe('Calculator', () => {
   buttonAdd.simulate('click');
   button4.simulate('click');
   buttonClear.simulate('click');
-  button5.simulate('click');
+  button6.simulate('click');
   buttonEqual.simulate('click');
   const runningTotal = container.find('#running-total');
-  expect(runningTotal.text()).toEqual('5'); 
+  expect(runningTotal.text()).toEqual('6'); 
 })
 
 })
-
-// calculator.clearClick() - clear the running total without affecting the calculation
