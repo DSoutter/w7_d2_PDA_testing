@@ -16,4 +16,16 @@ describe("Calculator", () => {
     cy.get('.display').should('contain','21')
   })
 
+  it('multiple operators combines together to work', () => {
+    cy.get('#number3').click();
+    cy.get('#operator-multiply').click();
+    cy.get('#number7').click();
+    cy.get('#operator-equals').click();
+    cy.get('#operator_add').click();
+    cy.get('#number7').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain','28')
+  })
+
+
 })
