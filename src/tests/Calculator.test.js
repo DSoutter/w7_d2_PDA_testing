@@ -54,9 +54,10 @@ describe('Calculator', () => {
     button5.simulate('click');
     buttonEqual.simulate('click');
     const runningTotal = container.find('#running-total');
-    expect(runningTotal.text()).toEqual('15');
+    expect(runningTotal.text()).toEqual('15'); 
   })
 
+  it()
 
 })
 
