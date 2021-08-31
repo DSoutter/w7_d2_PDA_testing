@@ -82,7 +82,26 @@ describe('Calculator', () => {
     const runningTotal = container.find('#running-total');
     expect(runningTotal.text()).toEqual('145'); 
   })
+
+  it('should chain multiple operations together', () => {
+    const button1 = container.find('#number1');
+    const button4 = container.find('#number4');
+    const button5 = container.find('#number5');
+    const buttonAdd = container.find('#operator_add');
+    const buttonSubtract = container.find('#operator-subtract');
+    const buttonEqual = container.find('#operator-equals');
+
+    button1.simulate('click');
+    buttonAdd.simulate('click');
+    button4.simulate('click');
+    buttonEqual.simulate('click');
+    buttonSubtract.simulate('click');
+    button5.simulate('click');
+    buttonEqual.simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('0'); 
+  })
 })
 
-// calculator.multiply() - multiply 3 by 5 and get 15
-// calculator.divide() - divide 21 by 7 and get 3
+//calculator.operatorClick() - chain multiple operations together
+// calculator.clearClick() - clear the running total without affecting the calculation
