@@ -27,5 +27,18 @@ describe("Calculator", () => {
     cy.get('.display').should('contain','28')
   })
 
+  it('large number works to make larger number', () => {
+    cy.get('#number7').click();
+    cy.get('#number7').click();
+    cy.get('#number7').click();
+    cy.get('#operator-multiply').click();
+    cy.get('#number7').click();
+    cy.get('#number7').click();
+    cy.get('#number7').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain','603729')
+  })
 
 })
+
+// Is the output as expected for a range of numbers (for example, positive, negative, decimals and very large numbers)?
